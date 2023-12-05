@@ -33,7 +33,7 @@ O servidor estará disponível em http://localhost:3000
 
 
 ## Configuração do Frontend (Vue.js)
-1. Abra um terminal na pasta do backend:
+1. Abra um terminal na pasta do front-end:
 
    ```bash
    cd front-end
