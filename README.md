@@ -50,3 +50,7 @@ O servidor estará disponível em http://localhost:3000
 O aplicativo Vue.js estará disponível em http://localhost:8080
 
 Agora você pode acessar o aplicativo no navegador. Certifique-se de ter um servidor MySQL em execução e configurado corretamente no arquivo "ormconfig.js" do backend.
+
+## Preview
+
+<img src="front-end/src/assets/printToReadme.png" >
