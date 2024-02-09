@@ -1,5 +1,6 @@
 <template>
   <div class="form-container">
+    <h2>{{ editando ? "Editar Usuário" : "Cadastrar Usuário" }}</h2>
     <b-form @submit.prevent="handleSubmit">
       <b-row>
         <b-col md="6" sm="12">
@@ -248,8 +249,14 @@ export default {
 </script>
 
 <style scoped>
-.form-container {
-  margin: 20px;
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-container {  
+  margin: 40px auto;
+  width: 80%;
 }
 .cpf-validation {
   margin-top: 0.25rem;
