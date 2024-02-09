@@ -4,7 +4,7 @@
     <table class="user-table">
       <thead>
         <tr>
-          <th style="text-align: center">#</th>
+          <th>#</th>
           <th>Nome</th>
           <th>Email</th>
           <th>Data de Nascimento</th>
@@ -20,7 +20,7 @@
           <td>{{ usuario.email }}</td>
           <td>{{ dateToDDMMYYYY(usuario.dataNascimento) }}</td>
           <td>{{ usuario.genero }}</td>
-          <td>{{ usuario.cpf }}</td>
+          <td>{{ formatCpf(usuario.cpf) }}</td>
           <td>
             <button title="Editar" @click="userUpdate(usuario.id)">
               <i class="fas fa-edit"></i>
@@ -72,6 +72,11 @@ export default {
       return new Date(data).toLocaleDateString("pt-BR", options);
     },
 
+    formatCpf(cpf) {
+    const formatedCpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+    return formatedCpf;
+  },
+
     userUpdate(id) {
       this.$router.push("/usuarios/editar/" + id);
     },
@@ -94,8 +99,14 @@ export default {
 </script>
 
 <style scoped>
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .user-list-container {
-  margin: 20px auto;
+  margin: 40px auto;
   width: 80%;
 }
 
@@ -115,8 +126,17 @@ export default {
   background-color: #f2f2f2;
 }
 
-.user-table button {
-  margin-right: 5px;
+.user-table th:first-child,
+.user-table td:first-child{
+  text-align: center;
+}
+
+.user-table td:last-child {
+  text-align: center;
+}
+
+.user-table button:last-child  {
+  margin-left: 15px;
 }
 
 @import "~@fortawesome/fontawesome-free/css/all.css";
